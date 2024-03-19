@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/demo2/demo2",
+    "pages/demo/demo",
+    "pages/index/index",
+    "pages/list/list",
+    "pages/about/about"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Test",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#015FF9",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "static/images/tabbar/home.png",
+        "selectedIconPath": "static/images/tabbar/home-h.png"
+      },
+      {
+        "text": "列表",
+        "pagePath": "pages/list/list",
+        "iconPath": "static/images/tabbar/list.png",
+        "selectedIconPath": "static/images/tabbar/list.png"
+      },
+      {
+        "text": "我们",
+        "pagePath": "pages/about/about",
+        "iconPath": "static/images/tabbar/user.png",
+        "selectedIconPath": "static/images/tabbar/user-h.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
