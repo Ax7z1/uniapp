@@ -1,6 +1,14 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path" : "pages/demo3/demo3",
+			"style" : 
+			{
+				"navigationBarTitleText" : "demo3测试",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
 			"path" : "pages/demo2/demo2",
 			"style" : 
 			{
