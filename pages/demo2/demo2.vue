@@ -11,6 +11,12 @@
 		
 		<!-- 采用三目运算符（三元表达式）的方式 -->
 		<view class="block" :class="state ? 'myActive' : '' "></view> 
+		
+		<view class="nav">
+			<view class="item" :class="navIndex == index ? 'active':'' " v-for="(item,index) in navArr" :key="item.id" 
+			@click="clickNav(index)">{{item.title}}</view>
+		</view>
+		
 	</view>
 </template>
 
@@ -22,7 +28,14 @@
 				num: 1,
 				bgcolor:"#c00",
 				random: 0,
-				state:false
+				state:false,
+				navArr:[
+					{id:1,title:"首页"},
+					{id:2,title:"介绍"},
+					{id:3,title:"教程"},
+					{id:4,title:"组件"}
+				],
+				navIndex:0
 			};
 		},
 		methods:{
@@ -42,6 +55,10 @@
 			},
 			clickBlock(){
 				this.state =!this.state
+			},
+			clickNav(e){
+				// console.log(e)
+				this.navIndex = e
 			}
 		}
 	}
@@ -62,5 +79,20 @@
 	width: 400rpx;
 	background: hotpink;
 	border-radius: 20rpx;
+}
+.nav{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	.item{
+		flex:1;
+		line-height: 90rpx;
+		background: #ccc;
+		text-align: center;
+		&.active{
+			background: #1AA034;
+			color: #fff;
+		}
+	}
 }
 </style>
