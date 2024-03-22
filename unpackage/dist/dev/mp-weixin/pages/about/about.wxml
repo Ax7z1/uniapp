@@ -1,1 +1,1 @@
-<view><navigator url="/pages/index/index">首页</navigator><navigator url="/pages/list/list">列表页</navigator></view>
+<view><pub-title vue-id="1cea7424-1" title="我们" subtitle="about page" bind:__l="__l"></pub-title><navigator url="/pages/index/index">首页</navigator><navigator url="/pages/list/list">列表页</navigator></view>

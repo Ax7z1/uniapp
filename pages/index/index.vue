@@ -1,5 +1,7 @@
 <template>
 	<view class="out">
+		<pubTitle list="[4,5,6]" :user="{user:'张三',gender:'女'}" :time="time" :title="test" subtitle="index page"></pubTitle>
+		<!-- <pub-title></pub-title> 可以把驼峰转为-横线-->
 		<navigator url="/pages/list/list">新闻列表</navigator>
 		<navigator url="/pages/list/list" open-type="reLaunch">新闻列表</navigator>
 		<navigator url="/pages/about/about" open-type="redirect">关于我们</navigator>
@@ -59,7 +61,12 @@
 
 <script>
 	export default {
-
+		data(){
+			return {
+				test: "测试",
+				time:Date.now()
+			}
+		}
 	}
 </script>
 

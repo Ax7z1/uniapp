@@ -1,5 +1,8 @@
 <template>
 	<view>
+		
+			<myitem></myitem>
+		
 		<view @click="onClick">标题：{{title}}</view>
 		<input type="text" v-model:value="title" />
 		
