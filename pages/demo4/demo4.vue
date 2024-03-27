@@ -2,6 +2,8 @@
 	<view>
 		<myitem></myitem>
 		
+		---------------
+		<view @click="goback" >返回上一页</view>
 		
 		<form @submit="onSubmit">
 			<view class="row">
@@ -72,6 +74,9 @@
 			},
 			fun(){
 				return "vue test"
+			},
+			goback(){
+				uni.navigateBack()
 			}
 		},
 		computed:{
@@ -81,6 +86,9 @@
 			changeTitle(){
 				return this.title.toUpperCase()
 			}
+		},
+		mounted(){
+			console.log(this.$router)
 		}
 	}
 </script>

@@ -12,7 +12,6 @@
 <script>
 	export default {
 		name:"pubTitle",
-		// props:["title","subtitle"],
 		props:{
 			title:{
 				type:String,
@@ -28,7 +27,9 @@
 			},
 			list:{
 				type:Array,
-				default:[1,2,3]
+				default:function(){
+					return [1,2,3];
+				}
 			},
 			user:{
 				type:Object,

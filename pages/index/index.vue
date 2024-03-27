@@ -1,6 +1,11 @@
 <template>
 	<view class="out">
-		<pubTitle list="[4,5,6]" :user="{user:'张三',gender:'女'}" :time="time" :title="test" subtitle="index page"></pubTitle>
+		<navigator url="/pages/demo4/demo4?wd=uniapp">跳转到demo4</navigator>
+		
+		<view style="width: 200rpx; height: 200rpx; background: pink;" @click="goDemo4"></view>
+		
+		
+		<pubTitle :list="[4,5,6]" :user="{user:'张三',gender:'女'}" :time="time" :title="test" subtitle="index page"></pubTitle>
 		<!-- 父向子传值 子组件通过props接收父组件传过来的值 -->
 		<!-- <pub-title></pub-title> 可以把驼峰转为-横线-->
 		<navigator url="/pages/list/list">新闻列表</navigator>
@@ -66,6 +71,13 @@
 			return {
 				test: "测试",
 				time:Date.now()
+			}
+		},
+		methods:{
+			goDemo4(){
+				uni.navigateTo({
+					url:"/pages/demo4/demo4"
+				})
 			}
 		}
 	}
