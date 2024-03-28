@@ -87,8 +87,8 @@
 				return this.title.toUpperCase()
 			}
 		},
-		mounted(){
-			console.log(this.$router)
+		onLoad(e){
+			console.log(e);
 		}
 	}
 </script>

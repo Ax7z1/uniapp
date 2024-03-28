@@ -76,7 +76,7 @@
 		methods:{
 			goDemo4(){
 				uni.navigateTo({
-					url:"/pages/demo4/demo4"
+					url:"/pages/demo4/demo4?wd=uniapp&author=ax7z1"
 				})
 			}
 		}

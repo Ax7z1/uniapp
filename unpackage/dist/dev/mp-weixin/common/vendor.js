@@ -9477,9 +9477,9 @@ internalMixin(Vue);
 
 /***/ }),
 /* 26 */
-/*!*************************************************!*\
-  !*** C:/Users/admin/Desktop/My/demo/pages.json ***!
-  \*************************************************/
+/*!*******************************************************!*\
+  !*** C:/Users/ax7z1/Desktop/uniapp/uniapp/pages.json ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -9623,9 +9623,9 @@ function normalizeComponent (
 
 /***/ }),
 /* 33 */
-/*!***************************************************************!*\
-  !*** C:/Users/admin/Desktop/My/demo/uni.promisify.adaptor.js ***!
-  \***************************************************************/
+/*!*********************************************************************!*\
+  !*** C:/Users/ax7z1/Desktop/uniapp/uniapp/uni.promisify.adaptor.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
