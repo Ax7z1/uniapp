@@ -1,7 +1,10 @@
 <script>
 	export default {
 		onLaunch: function() {
-			console.log('App Launch')
+			uni.setTabBarStyle({
+				// color:"#c00",
+				// backgroundColor:"#0c0"
+			})
 		},
 		onShow: function() {
 			console.log('App Show')

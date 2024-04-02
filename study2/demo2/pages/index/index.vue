@@ -18,7 +18,8 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello',
+				arr : ["三国演义", "西游记", "红楼梦", "水浒传"]
 			}
 		},
 		onLoad() {
@@ -69,16 +70,38 @@
 				// 		}
 				// 	}
 				// })
-				uni.showModal({
-					title:"手机验证",
-					editable:true,
-					placeholderText:"请输入手机号",
+				// uni.showModal({
+				// 	title:"手机验证",
+				// 	editable:true,
+				// 	placeholderText:"请输入手机号",
 					
-					success:res=>{
-						console.log(res)
+				// 	success:res=>{
+				// 		console.log(res)
 						
+				// 	}
+				// });
+				
+				// success方法不是箭头函数，所以里面的this指的是方法对象，而不是vm对象
+				// 解决方法一：外面定义一个that=this 
+				// let that = this
+				// uni.showActionSheet({
+				// 	itemList: this.arr,
+				// 	success: function (res) {
+				// 		console.log(res);
+				// 		// console.log('选中了第' + (res.tapIndex + 1) + '个按钮');
+				// 		console.log(that.arr[res.tapIndex]);
+				// 	}
+				// });
+				
+				// 解决方法二：使用箭头函数
+				uni.showActionSheet({
+					title: "-名著选择-",
+					itemList: this.arr,
+					success: (res)=>{
+						console.log(this.arr[res.tapIndex])
 					}
-				})
+				});
+				
 			}
 		}
 	}

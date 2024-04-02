@@ -1,0 +1,48 @@
+<template>
+	<view>
+	<view v-for="item in picurl" :key="item.id">
+		<image :src="item.url" mode="aspectFill" @click="getPicUrl"></image>
+	</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				picurl: []
+			};
+		},
+		methods: {
+			getPicUrl() {
+				uni.showLoading({
+					title:"数据加载中..."
+				})
+				uni.request({
+					// url: "https://dog.ceo/api/breeds/image/random",
+					url:"https://api.thecatapi.com/v1/images/search",
+					data:{
+						limit:1
+					},
+					success: res => {
+						console.log(res)
+						this.picurl = res.data
+					},
+					fail:err =>{
+						 console.log(err)
+					},
+					complete: () => {
+						uni.hideLoading()
+					}
+				})
+			}
+		},
+		onLoad() {
+			this.getPicUrl()
+		}
+	}
+</script>
+
+<style lang="scss">
+
+</style>
