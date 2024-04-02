@@ -7,14 +7,14 @@
 
 		<view class="comments">
 			<view class="text">评论</view>
-			<view class="row">
+			<view class="row" v-for="item in comments" :key="item.id">
 				<view class="top">
-					<view class="name">名称</view>
-					<view class="email">1111111@qq.com</view>
+					<view class="name">{{item.name}}</view>
+					<view class="email">{{item.email}}</view>
 					</viwe>
 				</view>
 				<view class="body">
-					评论的主体内容
+					{{item.body}}
 				</view>
 			</view>
 		</view>
@@ -26,13 +26,15 @@
 		data() {
 			return {
 				objectData: {},
-				id: 1
+				id: 1,
+				comments: []
 			};
 		},
 		onLoad(e) {
 			console.log(e)
 			this.id = e.id
-			this.getDatail()
+			this.getDatail();
+			this.getComments();
 		},
 		methods: {
 			getDatail() {
@@ -50,9 +52,18 @@
 						uni.hideLoading()
 					}
 				})
-			}
+			},
+			getComments(){
+			uni.request({
+				url:`https://jsonplaceholder.typicode.com/posts/${this.id}/comments`,
+				success:res=>{
+					console.log(res);
+					this.comments = res.data
+				}
+			})
 		}
 	}
+}
 </script>
 
 <style lang="scss">
