@@ -11,6 +11,8 @@
 		</view>
 	
 		<view class="box" @click="clickBox"></view>
+		
+		<button @click="removeBtn">清楚key3</button>
 	</view>
 </template>
 
@@ -23,16 +25,26 @@
 			}
 		},
 		onLoad() {
-			// uni.showLoading({
-			// 	title: "数据加载中..."
+
+			// uni.setStorage({
+			// 	key:"demo",
+			// 	data:123123,
+			// 	success:res =>{
+			// 		console.log(res);
+			// 	}
 			// })
+			uni.setStorageSync('mykey1', '我的测试');
+			uni.setStorageSync('mykey2', 'vue项目');
+			uni.setStorageSync('mykey3', {name:'张三',age:17});
 			
-			// setTimeout(()=>{
-			// 	uni.hideLoading()
-			// }, 2000);
+			
 			
 		},
 		methods: {
+			removeBtn(){
+				uni.removeStorageSync("mykey1")
+				// uni.clearStorage() 清楚全部数据缓存
+			},
 			clickImg(){
 				uni.showToast({
 					title: "测试测试！",
@@ -48,52 +60,6 @@
 			}, 1500)
 			},
 			clickBox(){
-				// uni.showModal({
-				// 	title: "手机验证",
-				//     // content:"继续进入下一页",
-				// 	// showCancel: false,
-				// 	// cancelText: "否",
-				// 	// cancelColor: "red"
-				// 	// editable: true,
-				// 	// placeholderText:"请输入手机号"
-				// 	success:res=>{
-				// 		console.log(res);
-				// 		if (res.confirm == true) {
-				// 			uni.navigateTo({
-				// 				url: '/pages/demo/demo',
-				// 			});
-				// 		} else{
-				// 			uni.showToast({
-				// 				title:"取消",
-				// 				icon:"none"
-				// 			})
-				// 		}
-				// 	}
-				// })
-				// uni.showModal({
-				// 	title:"手机验证",
-				// 	editable:true,
-				// 	placeholderText:"请输入手机号",
-					
-				// 	success:res=>{
-				// 		console.log(res)
-						
-				// 	}
-				// });
-				
-				// success方法不是箭头函数，所以里面的this指的是方法对象，而不是vm对象
-				// 解决方法一：外面定义一个that=this 
-				// let that = this
-				// uni.showActionSheet({
-				// 	itemList: this.arr,
-				// 	success: function (res) {
-				// 		console.log(res);
-				// 		// console.log('选中了第' + (res.tapIndex + 1) + '个按钮');
-				// 		console.log(that.arr[res.tapIndex]);
-				// 	}
-				// });
-				
-				// 解决方法二：使用箭头函数
 				uni.showActionSheet({
 					title: "-名著选择-",
 					itemList: this.arr,

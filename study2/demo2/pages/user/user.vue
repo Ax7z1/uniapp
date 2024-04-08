@@ -34,6 +34,9 @@
 			uni.showTabBarRedDot({
 				index:1
 			})
+			
+			let key= uni.getStorageSync("mykey");
+			console.log(key)
 		}
 	}
 </script>
